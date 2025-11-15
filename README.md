@@ -25,35 +25,29 @@ This project **requires a specific legacy environment** to run.
     
 2. Install and use the correct Node.js version:
     
-    Bash
     
-    ```
+    ```Bash
     nvm install 6.9.0
     nvm use 6.9.0
     ```
     
 3. Verify your Node.js and npm versions:
     
-    Bash
-    
-    ```
+    ```Bash
     node -v
     # Expected output: v6.9.0
     ```
     
 4. Install the project dependencies (this may take a moment):
     
-    Bash
     
-    ```
+    ```Bash
     npm install
     ```
     
 5. Run the development server:
     
-    Bash
-    
-    ```
+    ```Bash
     ng serve
     ```
     
