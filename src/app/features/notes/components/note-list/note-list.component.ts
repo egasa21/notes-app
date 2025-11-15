@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Note, NoteService } from '../../services/note.service';
+import { Note, NoteCreateRequest, NoteService } from '../../services/note.service';
 
 @Component({
   selector: 'app-note-list',
@@ -37,4 +37,25 @@ export class NoteListComponent implements OnInit {
 
   }
 
+  createNote() {
+    if (!this.newNoteContent.trim()) {
+      return;
+    }
+
+    this.errorMessage = '';
+    const newNote: NoteCreateRequest = {
+      content: this.newNoteContent
+    };
+
+    this.noteService.createNote(newNote).subscribe(
+      (createdNote: Note) => {
+        this.notes.unshift(createdNote);
+        this.newNoteContent = '';
+      },
+      (error) => {
+        console.error('Error creating note:', error);
+        this.errorMessage = 'Failed to create note.';
+      }
+    );
+  }
 }

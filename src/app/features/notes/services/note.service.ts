@@ -23,4 +23,8 @@ export class NoteService {
   getNotes() {
     return this.apiService.get(this.path);
   }
+
+  createNote(note: NoteCreateRequest): Observable<Note> {
+    return this.apiService.post(this.path, note);
+  }
 }
