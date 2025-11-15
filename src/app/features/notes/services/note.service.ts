@@ -31,4 +31,8 @@ export class NoteService {
   deleteNote(id: string): Observable<any> {
     return this.apiService.delete(`${this.path}/${id}`);
   }
+
+  getNoteById(id: string): Observable<Note> {
+    return this.apiService.get(`${this.path}/${id}`);
+  }
 }

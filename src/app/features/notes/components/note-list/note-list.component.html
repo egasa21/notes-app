@@ -25,6 +25,10 @@
             <span class="glyphicon glyphicon-trash"></span>
           </button>
 
+          <a [routerLink]="['/notes', note.id]" class="btn btn-default btn-xs pull-right" style="margin-right: 5px;">
+            <span class="glyphicon glyphicon-pencil"></span> Edit
+          </a>
+
           <p style="margin-right: 60px;">{{ note.content }}</p>
           <small class="text-muted">{{ note.createdAt | date:'short' }}</small>
         </li>

@@ -6,6 +6,7 @@ import { ModalModule, BsDropdownModule } from 'ngx-bootstrap';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { NotesModule } from './features/notes/notes.module';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NotesModule } from './features/notes/notes.module';
     HttpModule,
     CoreModule,
     NotesModule,
+    AppRoutingModule,
     ModalModule.forRoot(),
     BsDropdownModule.forRoot()
   ],
