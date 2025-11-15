@@ -58,4 +58,20 @@ export class NoteListComponent implements OnInit {
       }
     );
   }
+
+  deleteNote(id: string) {
+    if (!confirm('Are you sure you want to delete this note?')) {
+      return;
+    }
+
+    this.noteService.deleteNote(id).subscribe(
+      () => {
+        this.notes = this.notes.filter(note => note.id !== id);
+      },
+      (error) => {
+        console.error('Error deleting note:', error);
+        this.errorMessage = 'Failed to delete note.';
+      }
+    );
+  }
 }

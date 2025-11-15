@@ -27,4 +27,8 @@ export class NoteService {
   createNote(note: NoteCreateRequest): Observable<Note> {
     return this.apiService.post(this.path, note);
   }
+
+  deleteNote(id: string): Observable<any> {
+    return this.apiService.delete(`${this.path}/${id}`);
+  }
 }

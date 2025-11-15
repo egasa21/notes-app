@@ -44,6 +44,12 @@ export class ApiService {
       .catch(this.handleError);
   }
 
+  delete(path: string): Observable<any> {
+    return this.http.delete(`${this.baseUrl}${path}`, this.getHeaders())
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
 
 
 
