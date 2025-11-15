@@ -30,14 +30,13 @@
           </a>
 
           <p style="margin-right: 60px;">{{ note.content }}</p>
-          <small class="text-muted">{{ note.createdAt | date:'short' }}</small>
+          <small class="text-muted"><span class="glyphicon glyphicon-time" style="margin-right: 5px;"></span>{{ note.updatedAt | date:'short' }}</small>
         </li>
       </ul>
 
       <div *ngIf="!isLoading && notes.length === 0 && !errorMessage" class="alert alert-warning">
         You don't have any notes yet. Create one above!
       </div>
-
     </div>
   </div>
 </div>
