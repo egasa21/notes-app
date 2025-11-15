@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+      <h3>Create a New Note</h3>
+      
+      <form>
+        <div class="form-group">
+          <label for="noteContent">Content</label>
+          <input 
+            type="text" 
+            class="form-control" 
+            id="noteContent"
+            placeholder="What's on your mind?"
+            [(ngModel)]="newNoteContent"
+            name="noteContent"
+            required>
+        </div>
+        <button type="submit" class="btn btn-primary">Save Note</button>
+      </form>
+
+      <h3>My Notes</h3>
+
+      <div *ngIf="isLoading" class="alert alert-info">Loading notes...</div>
+      <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+      <ul class="list-group" *ngIf="!isLoading && notes.length > 0">
+        <li class="list-group-item" *ngFor="let note of notes">
+
+          <button class="btn btn-danger btn-xs pull-right">
+            <span class="glyphicon glyphicon-trash"></span>
+          </button>
+
+          <p style="margin-right: 60px;">{{ note.content }}</p>
+          <small class="text-muted">{{ note.createdAt | date:'short' }}</small>
+        </li>
+      </ul>
+
+      <div *ngIf="!isLoading && notes.length === 0 && !errorMessage" class="alert alert-warning">
+        You don't have any notes yet. Create one above!
+      </div>
+
+    </div>
+  </div>
+</div>
