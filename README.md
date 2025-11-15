@@ -2,6 +2,64 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
 
+### Notes App
+
+- **Node.js 6.9.x** (Required legacy environment)
+    
+- **Angular 2**
+    
+- **angular-cli 1.0.0-beta**
+    
+- **TypeScript 2.3.4**
+    
+- **Bootstrap 3.3.7**
+    
+- **ngx-bootstrap 1.1.16**
+
+    
+## How to Run
+
+This project **requires a specific legacy environment** to run.
+
+1. Make sure you have **Node Version Manager (nvm)** installed. 
+    
+2. Install and use the correct Node.js version:
+    
+    Bash
+    
+    ```
+    nvm install 6.9.0
+    nvm use 6.9.0
+    ```
+    
+3. Verify your Node.js and npm versions:
+    
+    Bash
+    
+    ```
+    node -v
+    # Expected output: v6.9.0
+    ```
+    
+4. Install the project dependencies (this may take a moment):
+    
+    Bash
+    
+    ```
+    npm install
+    ```
+    
+5. Run the development server:
+    
+    Bash
+    
+    ```
+    ng serve
+    ```
+    
+6. Open your browser and navigate to `http://localhost:4200`.
+
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
