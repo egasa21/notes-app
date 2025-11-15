@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Note, NoteService } from '../../services/note.service';
+import { Note, NoteCreateRequest, NoteService } from '../../services/note.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -44,6 +44,28 @@ export class NoteDetailComponent implements OnInit {
         this.isLoading = false;
       }
     )
+  }
+
+  updateNote() {
+    if (!this.noteContent) return;
+
+    const updatedNote: NoteCreateRequest = {
+      content: this.noteContent
+    };
+
+    this.noteService.updateNote(this.noteId, updatedNote).subscribe(
+      () => {
+        this.router.navigate(['/notes']);
+      },
+      (error) => {
+        console.error('Error updating note:', error);
+        this.errorMessage = 'Failed to update note.';
+      }
+    );
+  }
+
+  cancel() {
+    this.router.navigate(['/notes']);
   }
 
 }

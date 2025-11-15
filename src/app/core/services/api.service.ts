@@ -50,6 +50,16 @@ export class ApiService {
       .catch(this.handleError);
   }
 
+  put(path: string, body: Object = {}): Observable<any> {
+    return this.http.put(
+      `${this.baseUrl}${path}`,
+      JSON.stringify(body),
+      this.getHeaders()
+    )
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
 
 
 

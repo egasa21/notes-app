@@ -35,4 +35,8 @@ export class NoteService {
   getNoteById(id: string): Observable<Note> {
     return this.apiService.get(`${this.path}/${id}`);
   }
+
+  updateNote(id: string, note: NoteCreateRequest): Observable<Note> {
+    return this.apiService.put(`${this.path}/${id}`, note);
+  }
 }
